@@ -1,7 +1,9 @@
 package com.demo.comunity.controller;
 
+import com.demo.comunity.Model.User;
 import com.demo.comunity.dto.AccessTokenDTO;
 import com.demo.comunity.dto.GithubUser;
+import com.demo.comunity.mapper.UserMapper;
 import com.demo.comunity.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,12 +12,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.UUID;
 
 @Controller
 public class AuthrizeController {
 
     @Autowired
     private GithubProvider githubProvider;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Value("${github.client.id}")
     private String clientId;
@@ -38,10 +44,17 @@ public class AuthrizeController {
         accessTokenDTO.setClient_secret(clientSecret);
 
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
-        GithubUser user = githubProvider.getUser(accessToken);
-        if(user != null){
+        GithubUser githubUser = githubProvider.getUser(accessToken);
+        if(githubUser != null){
+            User user = new User();
+            user.setToken(UUID.randomUUID().toString());
+            user.setName(githubUser.getName());
+            user.setAccountId(String.valueOf(githubUser.getId()));
+            user.setGmtCreate(System.currentTimeMillis());
+            user.setGmtModified(user.getGmtCreate());
+            userMapper.insert(user);
             //登录成功，编写cookie和session
-            request.getSession().setAttribute("user",user);
+            request.getSession().setAttribute("user",githubUser);
             return "redirect:index";
         }else{
             //登录失败，重新登录

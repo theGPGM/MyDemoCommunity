@@ -27,12 +27,13 @@ public class GithubProvider {
             return token;
         }catch (Exception e){
             e.printStackTrace();
+            getAccessToken(accessTokenDTO);
         }
 
         return null;
     }
 
-    //
+    //上传token获取用户信息
     public GithubUser getUser(String accessToken){
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
@@ -45,6 +46,7 @@ public class GithubProvider {
             return githubUser;
         } catch (IOException e) {
             e.printStackTrace();
+            getUser(accessToken);
         }
         return null;
     }

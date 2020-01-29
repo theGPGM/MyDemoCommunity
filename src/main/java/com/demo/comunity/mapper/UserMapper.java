@@ -1,12 +1,10 @@
 package com.demo.comunity.mapper;
 
-import com.demo.comunity.Model.User;
+import com.demo.comunity.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-
-import javax.servlet.http.Cookie;
 
 
 @Mapper

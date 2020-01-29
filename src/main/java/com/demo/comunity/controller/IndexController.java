@@ -1,6 +1,6 @@
 package com.demo.comunity.controller;
 
-import com.demo.comunity.Model.User;
+import com.demo.comunity.model.User;
 import com.demo.comunity.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

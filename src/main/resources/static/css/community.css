@@ -12,8 +12,16 @@ body {
     margin-bottom: 15px;
 }
 
-.text-desc{
+.text-detail{
     font-size: 12px;
     font-weight: normal;
     color: #999;
+}
+
+.text-desc{
+    font-size:14px;
+}
+
+.pagination{
+    float:right;
 }

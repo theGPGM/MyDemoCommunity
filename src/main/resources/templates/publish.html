@@ -18,7 +18,7 @@
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">demo社区</span>
             </button>
-            <a class="navbar-brand" href="#">demo社区</a>
+            <a class="navbar-brand" href="/">demo社区</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,13 +41,12 @@
                         <li><a href="#">退出</a></li>
                     </ul>
                 </li>
-                <li th:if="${session.user == null}"><a
-                        href="https://github.com/login/oauth/authorize?client_id=d4ede2c7933a68f124a8&redirect_uri=http://localhost:8888/callback&scope=user&state=1">登录</a>
+                <li th:if="${session.user == null}"><a href="https://github.com/login/oauth/authorize?client_id=d4ede2c7933a68f124a8&redirect_uri=http://localhost:8888/callback&scope=user&state=1" >登录</a></li>
+                <li th:if="${session.user == null}"><a href="http://localhost:8888/register" >注册</a></li>
                 </li>
             </ul>
         </div>
     </div>
-
 </nav>
 <div class="container-fluid main">
     <div class="row">

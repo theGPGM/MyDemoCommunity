@@ -1,7 +1,5 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>demo社区</title>
+    <title>demo社区-注册</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/bootstrap-theme.css">
@@ -9,7 +7,6 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
-<body>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,36 +37,8 @@
                     </ul>
                 </li>
                 <li th:if="${session.user == null}"><a href="https://github.com/login/oauth/authorize?client_id=d4ede2c7933a68f124a8&redirect_uri=http://localhost:8888/callback&scope=user&state=1" >登录</a></li>
-                <li th:if="${session.user == null}"><a href="http://localhost:8888/register" >注册</a></li>
+                <li th:if="${session.user == null}"><a href="/register" >注册</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container-fluid main">
-    <div class="row">
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <h3><span class="glyphicon glyphicon-list" aria-hidden="true">发现</span></h3>
-            <hr>
-            <div class="media" th:each="question:${questions}">
-                <div class="media-left">
-                    <a href="#">
-                        <img class="media-object img-avatar" th:if="${question.user.getAvatarUrl() != null}" th:src="${question.user.getAvatarUrl()}" th:width="40px">
-                        <img class="media-object img-avatar" th:if="${question.user.getAvatarUrl() == null}" src="https://blogimg-1256098337.cos.ap-chengdu.myqcloud.com/v2-6afa72220d29f045c15217aa6b275808_hd.jpg" th:width="40px">
-                    </a>
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading" th:text="${question.getTitle()}"></h4>
-                    <span class="text-desc"><span th:text="${question.getViewCount()}"></span>次浏览 • <span th:text="${question.getCommentCount()}"></span>个回复 • 发表于：
-                    <span th:text="${#dates.format(question.getGmtCreate(), 'dd MMMM yyyy')}"></span>
-                    </span>
-                </div>
-                <hr>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <h3>热门话题：</h3>
-        </div>
-    </div>
-</div>
-</body>
-</html>

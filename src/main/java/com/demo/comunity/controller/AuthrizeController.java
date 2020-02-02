@@ -56,6 +56,7 @@ public class AuthrizeController {
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
+            user.setAvatarUrl(githubUser.getAvatar_url());
             userMapper.insert(user);
             Cookie user_session = new Cookie("user_session", token);
             user_session.setMaxAge(60 * 60);

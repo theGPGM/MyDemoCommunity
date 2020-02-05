@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>demo社区</title>
+    <title th:text="${sectionName}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.css">
@@ -14,7 +14,7 @@
 <div class="container-fluid main">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <h3><span class="glyphicon glyphicon-list" aria-hidden="true">&ensp;发现</span></h3>
+            <h3><span th:text="${sectionName}"></span></h3>
             <hr>
             <div th:if="${pagination != null}">
                 <div class="media" th:each="question:${pagination.getQuestions()}">
@@ -38,25 +38,25 @@
                 <nav aria-label="Page navigation">
                     <ul class="pagination pagination-lg">
                         <li th:if="${pagination.isShowFirst()}">
-                            <a href="/?page=1" aria-label="Previous">
+                            <a th:href="@{'/profile/'+${section}(page=1)}" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;&laquo;</span>
                             </a>
                         </li>
                         <li th:if="${pagination.isShowPrevious()}">
-                            <a th:href="@{'/?page='+${pagination.previousPage}}" aria-label="Previous">
+                            <a th:href="@{'/profile/'+${section}(page=${pagination.previousPage})}" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
                         <li th:each="page:${pagination.getPages()}" th:class="${pagination.currPage == page}?'active':''">
-                            <a th:href="@{'/?page='+${page}}" th:text="${page}">
+                            <a th:href="@{${section}(page=${page})}" th:text="${page}">
                             </a></li>
                         <li th:if="${pagination.isShowNext()}">
-                            <a th:href="@{'/?page='+${pagination.nextPage}}" aria-label="Next">
+                            <a th:href="@{'/profile/'+${section}(page=${pagination.nextPage})}" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
                         <li th:if="${pagination.isShowEnd()}">
-                            <a th:href="@{'/?page='+${pagination.totalPage}}" aria-label="Next">
+                            <a th:href="@{'/profile/'+${section}(page=${pagination.totalPage})}" aria-label="Next">
                                 <span aria-hidden="true">&raquo;&raquo;</span>
                             </a>
                         </li>
@@ -65,7 +65,13 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <h3>热门话题：</h3>
+            <div class="list-group profile">
+                <a href="/profile/questions" th:class="${section == 'questions'} ? 'active list-group-item' : 'list-group-item'">我的问题</a>
+                <a href="/profile/replies" th:class="${section == 'replies'} ? 'active list-group-item' : 'list-group-item'">
+                    最新回复
+                    <span class="badge">14</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>

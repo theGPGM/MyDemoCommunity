@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>demo社区 - 问题页面</title>
+</head>
+<body>
+<div th:insert="~{navigation::nav}"></div>
+<div class="row">
+    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+        <h3><span th:text="${question.getTitle()}"></span></h3>
+        <hr>
+    </div>
+    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+    </div>
+</div>
+</div>
+</body>
+</html>

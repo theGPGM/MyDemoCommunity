@@ -1,6 +1,7 @@
 package com.demo.community.controller;
 
 import com.demo.community.dto.QuestionDTO;
+import com.demo.community.exception.CustomizeException;
 import com.demo.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,8 +21,6 @@ public class QuestionController {
             @PathVariable(name = "id")Integer id
     ){
         QuestionDTO question = questionService.getById(id);
-        if(question == null)
-            return "redirect:/";
         model.addAttribute("question", question);
         return "question";
     }

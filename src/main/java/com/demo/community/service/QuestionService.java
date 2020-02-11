@@ -4,12 +4,12 @@ import com.demo.community.dto.PaginationDTO;
 import com.demo.community.dto.QuestionDTO;
 import com.demo.community.exception.CustomizeErrorCode;
 import com.demo.community.exception.CustomizeException;
+import com.demo.community.mapper.QuestionExtendMapper;
 import com.demo.community.mapper.QuestionMapper;
 import com.demo.community.mapper.UserMapper;
 import com.demo.community.model.Question;
 import com.demo.community.model.QuestionExample;
 import com.demo.community.model.User;
-import com.demo.community.model.UserExample;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +23,9 @@ public class QuestionService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private QuestionExtendMapper questionExtendMapper;
 
     @Autowired
     private QuestionMapper questionMapper;
@@ -144,5 +147,13 @@ public class QuestionService {
             if(updated != 1)
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
         }
+    }
+
+    public void incView(Integer id) {
+
+        Question question = new Question();
+        question.setId(id);
+        question.setViewCount(1);
+        questionExtendMapper.incView(question);
     }
 }

@@ -1,7 +1,6 @@
 package com.demo.community.controller;
 
 import com.demo.community.dto.QuestionDTO;
-import com.demo.community.exception.CustomizeException;
 import com.demo.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +20,8 @@ public class QuestionController {
             @PathVariable(name = "id")Integer id
     ){
         QuestionDTO question = questionService.getById(id);
+        //累加阅读数
+        questionService.incView(id);
         model.addAttribute("question", question);
         return "question";
     }

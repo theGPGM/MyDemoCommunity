@@ -8,16 +8,16 @@ import java.util.List;
 @Data
 public class PaginationDTO {
 
-    List<QuestionDTO> questions;
-    boolean showPrevious;
-    boolean showFirst;
-    boolean showNext;
-    boolean showEnd;
-    Integer currPage;
-    Integer totalPage;
-    Integer previousPage;
-    Integer nextPage;
-    List<Integer> pages = new ArrayList<>();
+   private List<QuestionDTO> questions;
+   private boolean showPrevious;
+   private boolean showFirst;
+   private boolean showNext;
+   private boolean showEnd;
+   private Integer currPage;
+   private Integer totalPage;
+   private Integer previousPage;
+   private Integer nextPage;
+   private List<Integer> pages = new ArrayList<>();
 
     public void setPagination( Integer totalPage,Integer page, Integer size) {
 

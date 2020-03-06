@@ -69,7 +69,7 @@ public class AuthrizeController {
             UserExample userExample = new UserExample();
             userExample.createCriteria()
                     .andAccountIdEqualTo(user.getAccountId());
-            Integer id = userMapper.selectByExample(userExample).get(0).getId();
+            Long id = userMapper.selectByExample(userExample).get(0).getId();
             user.setId(id);
             request.getSession().setAttribute("user",user);
             return "redirect:/";

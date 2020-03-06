@@ -5,4 +5,6 @@ import com.demo.community.model.Question;
 public interface QuestionExtendMapper {
 
     int incView(Question record);
+
+    int incCommentCount(Question record);
 }

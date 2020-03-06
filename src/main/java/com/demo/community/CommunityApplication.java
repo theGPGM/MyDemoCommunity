@@ -6,10 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.demo.community.mapper")
-public class ComunityApplication {
-
+public class CommunityApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ComunityApplication.class, args);
+        SpringApplication.run(CommunityApplication.class, args);
     }
-
 }

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class QuestionService {
+public class    QuestionService {
 
     @Autowired
     private UserMapper userMapper;
@@ -57,7 +57,7 @@ public class QuestionService {
     }
 
     //返回我的个人问题列表
-    public PaginationDTO list(Integer userId, Integer page, Integer size) {
+    public PaginationDTO list(Long userId, Integer page, Integer size) {
 
         QuestionExample example = new QuestionExample();
         example.createCriteria()
@@ -89,7 +89,7 @@ public class QuestionService {
     }
 
     //通过 id 返回
-    public QuestionDTO getById(Integer id) {
+    public QuestionDTO getById(Long id) {
 
         Question question = questionMapper.selectByPrimaryKey(id);
         if(question == null)
@@ -123,7 +123,7 @@ public class QuestionService {
     public void createOrUpdate(Question question) {
 
         if(question.getId() == null){
-            //创建
+            //创建问题
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
             question.setCommentCount(0);
@@ -131,7 +131,7 @@ public class QuestionService {
             question.setViewCount(0);
             questionMapper.insert(question);
         }else{
-            //更新
+            //更新问题
             Question updateQuestion = new Question();
             updateQuestion.setGmtModified(System.currentTimeMillis());
             updateQuestion.setTitle(question.getTitle());
@@ -149,7 +149,7 @@ public class QuestionService {
         }
     }
 
-    public void incView(Integer id) {
+    public void incView(Long id) {
 
         Question question = new Question();
         question.setId(id);

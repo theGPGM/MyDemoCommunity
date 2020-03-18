@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>comunity</artifactId>
+    <artifactId>community</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>comunity</name>
+    <name>community</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -70,6 +70,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <version>2.2.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
         </dependency>
     </dependencies>
     <build>

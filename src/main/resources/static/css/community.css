@@ -4,10 +4,20 @@ body {
 
 .main {
     background-color: white;
-    margin:30px;
+    margin:50px 100px;
+}
+
+.main-content{
+    border-right: 1px solid #e6e6e6;
+}
+
+.home-main-content{
+    padding-right: 30px;
+    border-right: 1px solid #e6e6e6;
 }
 
 .btn-publish{
+    width:90px;
     float: right;
     margin-bottom: 15px;
 }
@@ -32,9 +42,81 @@ body {
 
 .menu{
     color: #999;
+    margin-top: 5px;
+}
+
+.menu .icon{
     font-size: 14px;
+    margin-right: 5px;
+    cursor:pointer;
+}
+
+.menu .active{
+    color: #499ef3;
+}
+
+.menu .icon:hover{
+    color: #499ef3;
+}
+
+.sub-menu{
+    padding-top: 6px;
+}
+
+.sub-menu .publish-time{
+    color: #999;
 }
 
 .jumbotron{
     background-color: white;
+}
+
+.media-body{
+    padding-top: 12px;
+}
+
+.media-object{
+    width:45px;
+}
+
+.comment{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.indexer{
+    padding-top: 0px;
+}
+
+.comment-sp{
+    margin-top:0;
+}
+
+.commentator{
+    padding-top: 0px;
+}
+
+.commentator-name {
+    font-size: 13px;
+    color: #999;
+}
+
+.comment-content{
+    padding-top: 6px;
+}
+
+.like-icon{
+    padding-right: 5px;
+}
+
+.sub-comments{
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+.btn-comment{
+    width: 90px;
+    margin : 10px 0px;
 }

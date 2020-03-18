@@ -33,7 +33,7 @@
                         </ul>
                     </li>
                     <li th:if="${session.user == null}"><a href="https://github.com/login/oauth/authorize?client_id=d4ede2c7933a68f124a8&redirect_uri=http://localhost:8888/callback&scope=user&state=1" >登录</a></li>
-                    <li th:if="${session.user == null}"><a href="http://localhost:8888/register" >注册</a></li>
+                    <li th:if="${session.user == null}"><a href="/register" >注册</a></li>
                 </ul>
             </div>
         </div>

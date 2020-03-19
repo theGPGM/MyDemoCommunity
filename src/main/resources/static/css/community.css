@@ -79,6 +79,10 @@ body {
     width:45px;
 }
 
+.media-publisher{
+    padding-top: 5px;
+}
+
 .comment{
     margin-top: 10px;
     margin-bottom: 10px;
@@ -109,6 +113,12 @@ body {
     padding-right: 5px;
 }
 
+.split-line{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
 .sub-comments{
     margin-top: 10px;
     border: 1px solid #eee;
@@ -119,4 +129,22 @@ body {
 .btn-comment{
     width: 90px;
     margin : 10px 0px;
+}
+
+.count{
+    vertical-align: text-top;
+}
+
+.tag{
+    margin-right: 10px;
+}
+
+.comments{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.input{
+    padding-top: 20px;
 }

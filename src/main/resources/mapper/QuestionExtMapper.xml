@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.demo.community.mapper.QuestionExtendMapper">
+<mapper namespace="com.demo.community.mapper.QuestionExtMapper">
   <resultMap id="BaseResultMap" type="com.demo.community.model.Question">
     <id column="ID" jdbcType="INTEGER" property="id"/>
     <result column="TITLE" jdbcType="VARCHAR" property="title"/>
@@ -22,4 +22,7 @@
     set COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER}
     where id = #{id}
   </update>
+  <select id="selectRelatedTopic" parameterType="com.demo.community.model.Question" resultMap="BaseResultMap">
+    select * from QUESTION where id != #{id} and tag regexp #{tag}
+  </select>
 </mapper>

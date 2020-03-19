@@ -1,6 +1,7 @@
 /***
  * 提交回复
  */
+
 function post() {
 
     var questionId = $("#question_id").val();
@@ -46,38 +47,69 @@ function comment(e) {
  */
 function collapseComment(e) {
     var id = e.getAttribute("data-id");
-    var comment = $("#comment-" + id);
+    var comments = $("#comment-" + id);
 
+    console.log(comments);
     //获取二级评论状态
     var collapse = e.getAttribute("data-collapse");
     if (collapse) {
         //折叠二级评论
-        comment.removeClass("in");
+        comments.removeClass("in");
         e.removeAttribute("data-collapse");
         e.classList.remove("active");
     } else {
-        //展开二级评论
-        comment.addClass("in");
-        $.getJSON("/comment/" + id, function (data) {
-            // var commentBody = $("comment-body-" + id);
-            // var items = [];
-            //
-            // $.each(data.data, function (comment) {
-            //     let c = $("<div/>", {
-            //         "class": "col-lg-12 col-md-12 col-sm-12 col-xs-12",
-            //         html: comment.content
-            //     });
-            //     items.push("<li id='" + key + "'>" + val + "</li>");
-            // });
-            // commentBody.appendChild($("<div/>", {
-            //     "class": "col-lg-12 col-md-12 col-sm-12 col-xs-12 collapse sub-comments",
-            //     "id": "comment-" + id,
-            //     html: items.join("")
-            // }));
-
-            //标记评论状态
-            e.setAttribute("data-collapse", "in");
+        var subCommentContainer = $("#comment-" + id);
+        if (subCommentContainer.children().length != 1) {
+            //展开二级评论
+            comments.addClass("in");
             e.classList.add("active");
-        });
+            e.setAttribute("data-collapse", "in");
+
+        } else {
+            $.getJSON("/comment/" + id, function (data) {
+                $.each(data.data.reverse(), function (index, comment) {
+                    //media-left
+                    var mediaLeftElement = $("<div/>", {
+                        "class": "media-left"
+                    }).append($("<img/>", {
+                        "class": "media-object img-avatar",
+                        "src": comment.user.avatarUrl
+                    }));
+
+                    //media-body
+                    var mediaBodyElement = $("<div/>", {
+                        "class": "media-body commentator",
+                    }).append($("<span/>", {
+                        "class": "commentator-name",
+                        "html": comment.user.name
+                    })).append($("<div/>", {
+                        "class": "sub-menu"
+                    }).append($("<span/>", {
+                        "class": "comment-content",
+                        "html": comment.content
+                    })).append($("<span/>", {
+                        "class": "pull-right publish-time",
+                        "html": moment(comment.gmtCreate).format('YYYY-MM-DD')
+                    })));
+
+
+                    //media
+                    var mediaElement = $("<div/>", {
+                        "class": "media"
+                    }).append(mediaLeftElement).append(mediaBodyElement);
+
+                    //comment
+                    var commentElement = $("<div/>", {
+                        "class": "col-lg-12 col-md-12 col-sm-12 col-xs-12 comments",
+                    }).append(mediaElement);
+
+                    subCommentContainer.prepend(commentElement);
+                });
+
+                comments.addClass("in");
+                e.setAttribute("data-collapse", "in");
+                e.classList.add("active");
+            });
+        }
     }
 }

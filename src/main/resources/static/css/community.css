@@ -7,12 +7,13 @@ body {
     margin:50px 100px;
 }
 
-.main-content{
+.page-main-content{
     border-right: 1px solid #e6e6e6;
+    padding-right: 30px;
 }
 
-.home-main-content{
-    padding-right: 30px;
+.question-page-main-content{
+    padding-right: 15px;
     border-right: 1px solid #e6e6e6;
 }
 
@@ -147,4 +148,9 @@ body {
 
 .input{
     padding-top: 20px;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #499ef3;
 }

@@ -113,3 +113,18 @@ function collapseComment(e) {
         }
     }
 }
+
+function selectTag(e) {
+    var predecessor = $("#tag").val();
+    if(predecessor.split(',').indexOf(e) == -1){
+        if(predecessor){
+            $("#tag").val(predecessor + ',' + e);
+        }else{
+            $("#tag").val(e);
+        }
+    }
+}
+
+function showSelectedTag() {
+    $("#select-tag").show();
+}

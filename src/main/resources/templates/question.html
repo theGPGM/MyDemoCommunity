@@ -17,7 +17,7 @@
 <div class="container-fluid main">
     <div class="row">
         <!--左边主要内容-->
-        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 main-content">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 question-page-main-content">
             <!--正文-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h3><span th:text="${question.getTitle()}"></span></h3>
@@ -145,11 +145,11 @@
             <!--相关问题-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h4>相关问题</h4>
-                <ul>
-                    <li th:each="question : ${relatedTopic}" >
-                        <a th:href="'/question/'+${question.getId()}" th:text="${question.getTitle()}"></a>
-                    </li>
-                </ul>
+                <a th:each="relatedQuestion : ${relatedTopic}" th:href="@{'/question/'+${relatedQuestion.getId()}}" class="related-topic">
+                    <i class="glyphicon glyphicon-link"></i>
+                    <span th:text="${relatedQuestion.getTitle()}"></span>
+                    <br>
+                </a>
             </div>
         </div>
     </div>

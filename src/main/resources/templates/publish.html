@@ -22,7 +22,7 @@
             </h3>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <!--发布-->
-            <form action="/publish" method="post">
+            <form action="/publish" method="post" onsubmit="return publish(this)">
                 <input type="hidden" name="id" th:value="${id}">
                 <!--问题标题-->
                 <div class="form-group">
@@ -47,44 +47,25 @@
                            autocomplete="off"
                            onclick="showSelectedTag()"
                     >
-                    <div id="select-tag" style="display: none">
+                    <div id="select-tag" class="publish-tag-tab">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
-                                                                      data-toggle="tab">开发语言</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
-                                                       data-toggle="tab">平台架构</a></li>
+                            <li role="presentation" th:each="selectedTab : ${tags}" ><a th:href="'#'+${selectedTab.getCategoryName()}" th:aria-controls="${selectedTab.getCategoryName()}" role="tab"
+                                                                      data-toggle="tab"  th:text="${selectedTab.getCategoryName()}"></a></li>
                         </ul>
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="home">
-                                <span class="label label-info tag"><span class="glyphicon glyphicon-tag"
-                                                                         onclick="selectTag('Python')">Python</span></span>
-                                <span class="label label-info tag"><span class="glyphicon glyphicon-tag"
-                                                                         onclick="selectTag('Java')">Java</span></span>
-                                <span class="label label-info tag"><span class="glyphicon glyphicon-tag"
-                                                                         onclick="selectTag('PHP')">PHP</span></span>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="profile">
-                                <span class="label label-info tag"><span class="glyphicon glyphicon-tag"
-                                                                         onclick="selectTag('Spring Boot')">Spring Boot</span></span>
-                                <span class="label label-info tag"><span class="glyphicon glyphicon-tag"
-                                                                         onclick="selectTag('Spring MVC')">Spring MVC</span></span>
+                        <div class="tab-content publish-tab-content">
+                            <div role="tabpanel" class="tab-pane active" th:each="selectedTab : ${tags}" th:id="${selectedTab.getCategoryName()}">
+                                <span class="label label-info tag" th:each="selectedTag : ${selectedTab.getTags()}">
+                                    <span class="glyphicon glyphicon-tag" onclick="selectTag(this)" th:data-tag="${selectedTag}"  th:text="${selectedTag.toString()}"></span>
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid main">
-                    <div class="row">
-                        <div class="col-lg-11 col-md-12 col-sm-12 col-xs-12">
-                            <div class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12" role="alert"
-                                 th:text="${error}" th:if="${error!=null}">
-                            </div>
-                        </div>
-                        <div class="col-lg-1 col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-success btn-publish" value="submit">确认提交</button>
-                        </div>
-                    </div>
-                </div>
+                <button class="btn btn-success btn-publish" type="submit" th:data-id="${session.user.getId()}">确认提交</button>
             </form>
+            <div class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12" role="alert"
+                 th:text="${error}" th:if="${error!=null}">
+            </div>
         </div>
         <!--右侧-->
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">

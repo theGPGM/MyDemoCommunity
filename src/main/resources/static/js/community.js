@@ -114,13 +114,63 @@ function collapseComment(e) {
     }
 }
 
+function publish(e) {
+
+    var title = $("#title").val();
+    var description = $("#description").val();
+    var tag = $("#tag").val();
+    var userId = $("data-id");
+
+    debugger
+
+    if(!userId) {
+        alert("请先登录");
+        return false;
+    }
+    if(!title){
+        alert("标题不能为空");
+        return false;
+    }
+    if(!description){
+        alert("详细描述不能为空");
+        return false;
+    }
+    if(!tag){
+        alert("标签不能为空");
+        return false;
+    }
+    return true;
+    $.ajax({
+        type: "POST",
+        url: "/publish",
+        data: JSON.stringify({
+            "id": userId,
+            "title": title,
+            "description": description,
+            "tag": tag,
+        }),
+        success: function (response) {
+            if (response.code == 200) {
+                window.location.href="/";
+            }
+            else {
+                alert(response.message);
+                window.location.reload();
+            }
+        },
+        dataType: "json",
+        contentType: "application/json"
+    });
+}
+
 function selectTag(e) {
+    var value = e.getAttribute("data-tag");
     var predecessor = $("#tag").val();
-    if(predecessor.split(',').indexOf(e) == -1){
+    if(predecessor.split(',').indexOf(value) == -1){
         if(predecessor){
-            $("#tag").val(predecessor + ',' + e);
+            $("#tag").val(predecessor + ',' + value);
         }else{
-            $("#tag").val(e);
+            $("#tag").val(value);
         }
     }
 }
@@ -128,3 +178,4 @@ function selectTag(e) {
 function showSelectedTag() {
     $("#select-tag").show();
 }
+

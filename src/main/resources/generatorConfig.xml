@@ -43,5 +43,8 @@
 
         <table tableName="notification" domainObjectName="Notification" >
         </table>
+
+        <table tableName="like_comment" domainObjectName="LikeComment" >
+        </table>
     </context>
 </generatorConfiguration>

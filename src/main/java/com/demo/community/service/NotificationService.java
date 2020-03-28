@@ -8,10 +8,7 @@ import com.demo.community.exception.CustomizeErrorCode;
 import com.demo.community.exception.CustomizeException;
 import com.demo.community.mapper.NotificationMapper;
 import com.demo.community.mapper.UserMapper;
-import com.demo.community.model.Notification;
-import com.demo.community.model.NotificationExample;
-import com.demo.community.model.User;
-import com.demo.community.model.UserExample;
+import com.demo.community.model.*;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +28,21 @@ public class NotificationService {
 
     @Autowired
     private UserMapper userMapper;
+
+    //创建通知
+    public void createNotify(Comment comment, Long receivedId, String outerTitle, String notifierName, Integer type, Long outerId) {
+
+        Notification notification = new Notification();
+        notification.setOuterId(outerId);                                       //类型 id
+        notification.setType(type);                                             //类型：问题、评论、点赞
+        notification.setNotifierId(comment.getCommentatorId());                 //发送 id
+        notification.setReceiverId(receivedId);                                 //接收 id
+        notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());      //是否已读
+        notification.setGmtCreate(System.currentTimeMillis());                  //创建时间
+        notification.setNotifierName(notifierName);
+        notification.setOuterTitle(outerTitle);
+        notificationMapper.insert(notification);
+    }
 
     //通知列表
     public PaginationDTO<NotificationDTO> list(Long userId, Integer page, Integer size) {

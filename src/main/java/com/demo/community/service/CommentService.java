@@ -2,7 +2,6 @@ package com.demo.community.service;
 
 import com.demo.community.dto.CommentDTO;
 import com.demo.community.enums.CommentTypeEnum;
-import com.demo.community.enums.NotificationStatusEnum;
 import com.demo.community.enums.NotificationTypeEnum;
 import com.demo.community.exception.CustomizeErrorCode;
 import com.demo.community.exception.CustomizeException;
@@ -38,7 +37,8 @@ public class CommentService {
     private CommentExtMapper commentExtMapper;
 
     @Autowired
-    private NotificationMapper notificationMapper;
+    private NotificationService notificationService;
+
 
     //评论
     @Transactional
@@ -66,7 +66,7 @@ public class CommentService {
             //添加通知
             Comment parentComment = commentMapper.selectByPrimaryKey(comment.getParentId());
             User commentator = userMapper.selectByPrimaryKey(comment.getCommentatorId());
-            createNotify(comment, parentComment.getCommentatorId(), comment.getContent(), commentator.getName(),  NotificationTypeEnum.REPLY_COMMENT.getType(), parentComment.getParentId());
+            notificationService.createNotify(comment, parentComment.getCommentatorId(), comment.getContent(), commentator.getName(), NotificationTypeEnum.REPLY_COMMENT.getType(), parentComment.getParentId());
         } else {
 
             //回复问题
@@ -82,16 +82,16 @@ public class CommentService {
 
             //添加通知
             User commentator = userMapper.selectByPrimaryKey(comment.getCommentatorId());
-            createNotify(comment, question.getCreatorId(), question.getTitle(), commentator.getName(),  NotificationTypeEnum.REPLY_QUESTION.getType(), question.getId());
+            notificationService.createNotify(comment, question.getCreatorId(), question.getTitle(), commentator.getName(), NotificationTypeEnum.REPLY_QUESTION.getType(), question.getId());
         }
     }
 
     /*
-    *通过 targetId 获取评论列表
-    * */
+     *通过 targetId 获取评论列表
+     * */
     public List<CommentDTO> listByTargetId(Long id, CommentTypeEnum type) {
 
-        //获取该问题下的评论
+        //根据 type 获取该问题下的一级评论或一级评论的二级评论
         CommentExample example = new CommentExample();
         example.createCriteria()
                 .andParentIdEqualTo(id)
@@ -134,18 +134,24 @@ public class CommentService {
         commentExtMapper.incCommentCount(parentComment);
     }
 
-    private void createNotify(Comment comment, Long receivedId, String outerTitle, String notifierName, Integer type, Long outerId) {
+    public void incLikeCount(Long commentId) {
 
-        Notification notification = new Notification();
-        notification.setOuterId(outerId);                                       //类型 id
-        notification.setType(type);                                             //类型：问题、评论、点赞
-        notification.setNotifierId(comment.getCommentatorId());                 //发送 id
-        notification.setReceiverId(receivedId);                                 //接收 id
-        notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());      //是否已读
-        notification.setGmtCreate(System.currentTimeMillis());                  //创建时间
-        notification.setNotifierName(notifierName);
-        notification.setOuterTitle(outerTitle);
-        notificationMapper.insert(notification);
+        Comment comment = new Comment();
+        comment.setId(commentId);
+        comment.setLikeCount(1);
+        commentExtMapper.incLikeCount(comment);
+    }
+
+    public Comment getByCommentId(Long commentId) {
+        return commentMapper.selectByPrimaryKey(commentId);
+    }
+
+    public void delLikeCount(Long commentId) {
+
+        Comment comment = new Comment();
+        comment.setId(commentId);
+        comment.setLikeCount(1);
+        commentExtMapper.delLikeCount(comment);
     }
 }
 

@@ -41,4 +41,8 @@ public class UserService {
             userMapper.insert(user);
         }
     }
+
+    public User getById(Long likerId) {
+        return userMapper.selectByPrimaryKey(likerId);
+    }
 }

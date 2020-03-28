@@ -9,4 +9,8 @@ import java.util.List;
 
 public interface CommentExtMapper {
     int incCommentCount(Comment comment);
+
+    int incLikeCount(Comment comment);
+
+    int delLikeCount(Comment comment);
 }

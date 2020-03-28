@@ -69,9 +69,10 @@
                             </div>
                             <div th:text="${comment.getContent()}" class="comment-content"></div>
                             <div class="menu">
-                                <span class="icon like-icon">
+                                <span class="icon like-icon" onclick="like(this)" th:comment-id="${comment.getId()}">
                                     <span class="glyphicon glyphicon-thumbs-up"></span>
-                                    <span th:text="${comment.getLikeCount()}" class="count"></span>
+                                    <span th:text="${comment.getLikeCount()}" class="count"
+                                        ></span>
                                 </span>
                                 <span class="icon" th:data-id="${comment.getId()}"
                                       onclick="collapseComment(this)">

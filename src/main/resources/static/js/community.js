@@ -49,7 +49,6 @@ function collapseComment(e) {
     var id = e.getAttribute("data-id");
     var comments = $("#comment-" + id);
 
-    console.log(comments);
     //获取二级评论状态
     var collapse = e.getAttribute("data-collapse");
     if (collapse) {
@@ -179,3 +178,51 @@ function showSelectedTag() {
     $("#select-tag").show();
 }
 
+/**
+ * 点赞
+ */
+function like(e) {
+
+    var commentatorId = e.getAttribute("comment-id");
+    var active = e.getAttribute("like-active");
+    if(active){
+        $.ajax({
+            type: "POST",
+            url: "/like",
+            data: JSON.stringify({
+                "commentId":commentatorId
+            }),
+            success: function (response) {
+                if (response.code == 200) {
+
+
+                } else {
+                    alert(response.message);
+                }
+            },
+            dataType: "json",
+            contentType: "application/json"
+        });
+        e.classList.remove("active");
+        e.removeAttribute("like-active");
+    }else{
+        $.ajax({
+            type: "POST",
+            url: "/like",
+            data: JSON.stringify({
+                "commentId":commentatorId
+            }),
+            success: function (response) {
+                if (response.code == 200) {
+
+                } else {
+                    alert(response.message);
+                }
+            },
+            dataType: "json",
+            contentType: "application/json"
+        });
+        e.classList.add("active");
+        e.setAttribute("like-active", "active");
+    }
+}

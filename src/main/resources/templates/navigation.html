@@ -5,7 +5,8 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">demo社区</span>
                 </button>
                 <a class="navbar-brand" href="/">demo社区</a>
@@ -22,8 +23,14 @@
                     <li th:if="${session.user != null}">
                         <a href="/publish">提问</a>
                     </li>
+                    <li><a href="/profile/notifications" th:if="${session.user}">
+                        通知&thinsp;
+                        <span class="badge" th:if="${session.unreadNotificationCount}" th:text="${session.unreadNotificationCount}"></span>
+                    </a>
+                    </li>
                     <li class="dropdown" th:if="${session.user != null}">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">
                             <span th:text="${session.user.getName()}"></span>
                             <span class="caret"></span>
                         </a>
@@ -32,8 +39,10 @@
                             <li><a href="/logout">退出账户</a></li>
                         </ul>
                     </li>
-                    <li th:if="${session.user == null}"><a href="https://github.com/login/oauth/authorize?client_id=d4ede2c7933a68f124a8&redirect_uri=http://localhost:8888/callback&scope=user&state=1" >登录</a></li>
-                    <li th:if="${session.user == null}"><a href="/register" >注册</a></li>
+                    <li th:if="${session.user == null}"><a
+                            href="https://github.com/login/oauth/authorize?client_id=d4ede2c7933a68f124a8&redirect_uri=http://localhost:8888/callback&scope=user&state=1">登录</a>
+                    </li>
+                    <li th:if="${session.user == null}"><a href="/register">注册</a></li>
                 </ul>
             </div>
         </div>

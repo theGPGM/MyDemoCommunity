@@ -14,7 +14,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -34,19 +33,21 @@ public class QuestionService {
     private QuestionMapper questionMapper;
 
 
-    //返回首页文章列表对象
+    //首页文章列表
     public PaginationDTO list(Integer page, Integer size) {
+
+        PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO<>();
 
         Integer count = (int) questionMapper.countByExample(new QuestionExample());
         Integer totalPage = countTotalPage(count, page, size);
-        if (totalPage == 0)
+        if (totalPage == 0) {
             return null;
+        }
         Integer offset = size * (page - 1);
         QuestionExample example = new QuestionExample();
         example.setOrderByClause("gmt_create desc");
         List<Question> list = questionMapper.selectByExampleWithRowbounds(example, new RowBounds(offset, size));
         List<QuestionDTO> questionDTOS = new ArrayList<>();
-        PaginationDTO paginationDTO = new PaginationDTO();
         paginationDTO.setPagination(totalPage, page, size);
 
         for (Question question : list) {
@@ -56,13 +57,15 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOS.add(questionDTO);
         }
-        paginationDTO.setQuestions(questionDTOS);
+        paginationDTO.setObjects(questionDTOS);
 
         return paginationDTO;
     }
 
-    //返回我的个人问题列表
-    public PaginationDTO list(Long userId, Integer page, Integer size) {
+    //个人问题列表
+    public PaginationDTO<QuestionDTO> list(Long userId, Integer page, Integer size) {
+
+        PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO<>();
 
         QuestionExample example = new QuestionExample();
         example.createCriteria()
@@ -75,9 +78,9 @@ public class QuestionService {
         QuestionExample questionExample = new QuestionExample();
         questionExample.createCriteria()
                 .andCreatorIdEqualTo(userId);
+        questionExample.setOrderByClause("gmt_create desc");
         List<Question> list = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offset, size));
         List<QuestionDTO> questionDTOS = new ArrayList<>();
-        PaginationDTO paginationDTO = new PaginationDTO();
         paginationDTO.setPagination(totalPage, page, size);
 
         for (Question question : list) {
@@ -85,15 +88,14 @@ public class QuestionService {
             BeanUtils.copyProperties(question, questionDTO);
             User user = userMapper.selectByPrimaryKey(question.getCreatorId());
             questionDTO.setUser(user);
-
             questionDTOS.add(questionDTO);
         }
-        paginationDTO.setQuestions(questionDTOS);
+        paginationDTO.setObjects(questionDTOS);
 
         return paginationDTO;
     }
 
-    //通过 id 返回
+    //通过 id 获取问题
     public QuestionDTO getById(Long id) {
 
         Question question = questionMapper.selectByPrimaryKey(id);
@@ -107,24 +109,7 @@ public class QuestionService {
         return questionDTO;
     }
 
-    private Integer countTotalPage(Integer count, Integer page, Integer size) {
-        Integer totalPage;
-        if (count <= 0)
-            return 0;
-        //计算总页数
-        if (count % size == 0) {
-            totalPage = count / size;
-        } else {
-            totalPage = count / size + 1;
-        }
-        if (page < 1)
-            page = 1;
-        if (page > totalPage && totalPage != 0)
-            page = totalPage;
-
-        return totalPage;
-    }
-
+    //创建 / 更新问题
     public void createOrUpdate(Question question) {
 
         if (question.getId() == null) {
@@ -154,6 +139,7 @@ public class QuestionService {
         }
     }
 
+    //增加阅读数
     public void incView(Long id) {
 
         Question question = new Question();
@@ -162,6 +148,7 @@ public class QuestionService {
         questionExtMapper.incView(question);
     }
 
+    //相关话题
     public List<QuestionDTO> selectRelatedTopic(QuestionDTO questionDTO) {
 
         if (StringUtils.isBlank(questionDTO.getTag()))
@@ -182,5 +169,24 @@ public class QuestionService {
             }).collect(Collectors.toList());
             return questionDTOs;
         }
+    }
+
+    //计算总页数
+    private Integer countTotalPage(Integer count, Integer page, Integer size) {
+        Integer totalPage;
+        if (count <= 0)
+            return 0;
+        //计算总页数
+        if (count % size == 0) {
+            totalPage = count / size;
+        } else {
+            totalPage = count / size + 1;
+        }
+        if (page < 1)
+            page = 1;
+        if (page > totalPage && totalPage != 0)
+            page = totalPage;
+
+        return totalPage;
     }
 }

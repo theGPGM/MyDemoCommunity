@@ -5,7 +5,9 @@ import com.demo.community.dto.CommentDTO;
 import com.demo.community.dto.ResultDTO;
 import com.demo.community.enums.CommentTypeEnum;
 import com.demo.community.exception.CustomizeErrorCode;
+import com.demo.community.mapper.NotificationMapper;
 import com.demo.community.model.Comment;
+import com.demo.community.model.Notification;
 import com.demo.community.model.User;
 import com.demo.community.service.CommentService;
 import org.apache.commons.lang3.StringUtils;
@@ -20,6 +22,7 @@ import java.util.List;
 public class CommentController {
     @Autowired
     private CommentService commentService;
+
 
     @ResponseBody
     @RequestMapping(value = "/comment", method = RequestMethod.POST)

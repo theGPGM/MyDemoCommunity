@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-public class PaginationDTO {
+public class PaginationDTO<T> {
 
-   private List<QuestionDTO> questions;
+   private List<T> objects;
    private boolean showPrevious;
    private boolean showFirst;
    private boolean showNext;
@@ -19,9 +19,9 @@ public class PaginationDTO {
    private Integer nextPage;
    private List<Integer> pages = new ArrayList<>();
 
-    public void setPagination( Integer totalPage,Integer page, Integer size) {
+   public void setPagination( Integer totalPage,Integer page, Integer size) {
 
-        this.totalPage = totalPage;
+       this.totalPage = totalPage;
         this.currPage = page;
         if(page < 1) {
             page = 1;
@@ -29,7 +29,6 @@ public class PaginationDTO {
         if(page > totalPage) {
             page = totalPage;
         }
-
 
         pages.add(page);
         for(int i = 1; i <= 3; i++){

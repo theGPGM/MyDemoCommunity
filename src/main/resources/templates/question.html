@@ -35,7 +35,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <span class="label label-info tag" th:each="tag : ${#strings.arraySplit(question.tag, ',')}">
                     <span class="glyphicon glyphicon-tag"></span>
-                    <span th:text="${tag}"></span>
+                    <span th:text="${tag}" class="all-tag-font"></span>
                 </span>
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             </div>
@@ -50,7 +50,7 @@
 
             <!--一级评论-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4><span th:text="${question.commentCount}"></span>个回复</h4>
+                <h4><span th:text="${question.getCommentCount()}"></span>个回复</h4>
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comment-sp">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:each="comment: ${comments}">
                     <div class="media">
@@ -133,7 +133,7 @@
                             <img class="media-object img-avatar" th:if="${question.user.getAvatarUrl() != null}"
                             th:src="${question.user.getAvatarUrl()}">
                             <img class="media-object img-avatar" th:if="${question.user.getAvatarUrl() == null}"
-                            src="https://blogimg-1256098337.cos.ap-chengdu.myqcloud.com/v2-6afa72220d29f045c15217aa6b275808_hd.jpg">
+                            src="/img/AnonymousUser.jpg">
                         </a>
                     </div>
                     <div class="media-body">

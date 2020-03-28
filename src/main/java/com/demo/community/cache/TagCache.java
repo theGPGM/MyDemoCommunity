@@ -16,22 +16,22 @@ public class TagCache{
 
         TagDTO language = new TagDTO();
         language.setCategoryName("开发语言");
-        language.setTags(Arrays.asList("js","php","html","java","python","c++","c#"));
+        language.setTags(Arrays.asList("JavaScript","PHP","Html","Java","Python","C++","C#"));
         tagDTOS.add(language);
 
         TagDTO framework = new TagDTO();
         framework.setCategoryName("平台框架");
-        framework.setTags(Arrays.asList("spring", "express", "django","flask", "struts"));
+        framework.setTags(Arrays.asList("Spring", "Express", "Django","Flask", "Struts"));
         tagDTOS.add(framework);
 
         TagDTO server = new TagDTO();
         server.setCategoryName("服务器");
-        server.setTags(Arrays.asList("linux", "ubuntu", "nginx","docker", "apache"));
+        server.setTags(Arrays.asList("Linux", "Ubuntu", "Nginx","Docker", "Apache"));
         tagDTOS.add(server);
 
         TagDTO db = new TagDTO();
         db.setCategoryName("数据库");
-        db.setTags(Arrays.asList("mysql", "redis", "sql","oracle", "memcached"));
+        db.setTags(Arrays.asList("Mysql", "Redis", "Sql","Oracle", "Memcached"));
         tagDTOS.add(db);
 
         return tagDTOS;

@@ -163,3 +163,15 @@ a:hover{
 .publish-tab-content{
     margin-top: 10px;
 }
+
+.all-tag-font{
+    font-size: 12px;
+}
+
+.all-title-split{
+    margin-top: 5px;
+}
+
+.profile-badge{
+    background-color: #bd2d2d
+}

@@ -11,6 +11,8 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     CONTENT_IS_EMPTY(2007,"内容为空"),
     TITLE_IS_EMPTY(2008, "标题为空"),
     TAG_IS_EMPTY(2009, "标签为空"),
+    READ_THE_NOTIFICATION_FAILED(2010, "你读的好像是别人的信息噢"),
+    NOTIFICATION_NOT_FOUND(2011, "莫非消息不翼而飞了？")
     ;
 
     private Integer code;

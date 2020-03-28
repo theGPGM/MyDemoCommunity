@@ -32,6 +32,8 @@ public class AuthrizeController {
     @Autowired
     private UserService userService;
 
+
+
     @Value("${github.client.id}")
     private String clientId;
 
@@ -72,6 +74,7 @@ public class AuthrizeController {
             Long id = userMapper.selectByExample(userExample).get(0).getId();
             user.setId(id);
             request.getSession().setAttribute("user",user);
+
             return "redirect:/";
         }else{
             //登录失败，重新登录

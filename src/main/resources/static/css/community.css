@@ -56,10 +56,6 @@ body {
     color: #499ef3;
 }
 
-.menu .icon:hover{
-    color: #499ef3;
-}
-
 .sub-menu{
     padding-top: 6px;
 }
@@ -136,7 +132,7 @@ body {
     vertical-align: text-top;
 }
 
-.tag{
+.question-tag{
     margin-right: 10px;
 }
 

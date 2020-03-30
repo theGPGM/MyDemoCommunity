@@ -32,8 +32,6 @@ public class AuthrizeController {
     @Autowired
     private UserService userService;
 
-
-
     @Value("${github.client.id}")
     private String clientId;
 

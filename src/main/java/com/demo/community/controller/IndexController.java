@@ -21,7 +21,7 @@ public class IndexController {
                         @RequestParam(name="size",defaultValue="5") Integer size
     ){
         //获取文章列表
-        PaginationDTO pagination = questionService.list(page,size);
+        PaginationDTO pagination = questionService.list("", page,size);
         model.addAttribute("pagination", pagination);
         return "index";
     }

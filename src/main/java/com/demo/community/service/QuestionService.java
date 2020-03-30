@@ -33,8 +33,8 @@ public class QuestionService {
     private QuestionMapper questionMapper;
 
 
-    //首页文章列表
-    public PaginationDTO list(Integer page, Integer size) {
+    //返回文章列表
+    public PaginationDTO list(String searchContent, Integer page, Integer size) {
 
         PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO<>();
 

@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>demo社区</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>demo社区</title>
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.css">
     <link rel="stylesheet" href="/css/community.css">
@@ -27,7 +28,7 @@
                                 <img class="media-object img-avatar" th:if="${question.user.getAvatarUrl() != null}"
                                      th:src="${question.user.getAvatarUrl()}">
                                 <img class="media-object img-avatar" th:if="${question.user.getAvatarUrl() == null}"
-                                     src="https://blogimg-1256098337.cos.ap-chengdu.myqcloud.com/v2-6afa72220d29f045c15217aa6b275808_hd.jpg">
+                                     src="/images/AnonymousUser.jpg">
                             </a>
                         </div>
                         <div class="media-body indexer">

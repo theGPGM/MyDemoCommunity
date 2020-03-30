@@ -1,8 +1,9 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="${sectionName}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title th:text="${sectionName}"></title>
+    <link rel="icon" type="image/png" href="/images/favicon.ico">
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.css">
     <link rel="stylesheet" href="/css/community.css">
@@ -48,7 +49,7 @@
                             <img class="media-object img-avatar" th:if="${question.user.getAvatarUrl() != null}"
                                  th:src="${question.user.getAvatarUrl()}" th:width="45px">
                             <img class="media-object img-avatar" th:if="${question.user.getAvatarUrl() == null}"
-                                 src="/img/AnonymousUser.jpg">
+                                 src="/static/images/AnonymousUser.jpg">
                         </a>
                     </div>
                     <div class="media-body indexer">

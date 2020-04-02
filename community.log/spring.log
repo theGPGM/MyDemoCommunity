@@ -1,35 +1,206 @@
-2020-04-03 00:11:10.360  INFO 5715 --- [restartedMain] com.demo.community.CommunityApplication  : Starting CommunityApplication on gerogema-VirtualBox with PID 5715 (/root/IdeaProjects/community/target/classes started by root in /root/IdeaProjects/community)
-2020-04-03 00:11:10.382  INFO 5715 --- [restartedMain] com.demo.community.CommunityApplication  : No active profile set, falling back to default profiles: default
-2020-04-03 00:11:10.625  INFO 5715 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
-2020-04-03 00:11:10.635  INFO 5715 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-04-03 00:11:10.635  INFO 5715 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-04-03 00:11:13.039  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-04-03 00:11:13.047  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
-2020-04-03 00:11:13.085  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 0 Elasticsearch repository interfaces.
-2020-04-03 00:11:13.096  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-04-03 00:11:13.099  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
-2020-04-03 00:11:13.117  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17ms. Found 0 Reactive Elasticsearch repository interfaces.
-2020-04-03 00:11:13.136  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2020-04-03 00:11:13.137  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-04-03 00:11:13.172  INFO 5715 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 0 JPA repository interfaces.
-2020-04-03 00:11:14.098  INFO 5715 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-04-03 00:11:14.602  INFO 5715 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
-2020-04-03 00:11:14.621  INFO 5715 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-04-03 00:11:14.625  INFO 5715 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
-2020-04-03 00:11:14.736  INFO 5715 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-04-03 00:11:14.737  INFO 5715 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4102 ms
-2020-04-03 00:11:14.925  INFO 5715 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-04-03 00:11:15.108  INFO 5715 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-04-03 00:11:15.115  INFO 5715 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/community'
-2020-04-03 00:11:15.518  INFO 5715 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-04-03 00:11:15.604  INFO 5715 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
-2020-04-03 00:11:15.780  INFO 5715 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-04-03 00:11:15.879  INFO 5715 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-04-03 00:11:16.297  INFO 5715 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-04-03 00:11:16.304  INFO 5715 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-04-03 00:11:16.402  INFO 5715 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-04-03 00:11:17.507  WARN 5715 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-04-03 00:11:17.660  INFO 5715 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-04-03 00:11:17.777  INFO 5715 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-04-03 00:11:18.447  INFO 5715 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
-2020-04-03 00:11:18.451  INFO 5715 --- [restartedMain] com.demo.community.CommunityApplication  : Started CommunityApplication in 9.344 seconds (JVM running for 11.855)
+2020-04-03 00:51:06.579  INFO 8132 --- [restartedMain] com.demo.community.CommunityApplication  : Starting CommunityApplication on gerogema-VirtualBox with PID 8132 (/root/IdeaProjects/community/target/classes started by root in /root/IdeaProjects/community)
+2020-04-03 00:51:06.591  INFO 8132 --- [restartedMain] com.demo.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2020-04-03 00:51:06.770  INFO 8132 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in /root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/root/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-04-03 00:51:06.771  INFO 8132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-03 00:51:06.772  INFO 8132 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-03 00:51:08.189  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-03 00:51:08.190  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2020-04-03 00:51:08.215  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Elasticsearch repository interfaces.
+2020-04-03 00:51:08.220  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-03 00:51:08.222  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2020-04-03 00:51:08.232  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9ms. Found 0 Reactive Elasticsearch repository interfaces.
+2020-04-03 00:51:08.254  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-03 00:51:08.255  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-03 00:51:08.268  INFO 8132 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces.
+2020-04-03 00:51:08.763  INFO 8132 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-03 00:51:09.111  INFO 8132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2020-04-03 00:51:09.119  INFO 8132 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-03 00:51:09.120  INFO 8132 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-03 00:51:09.228  INFO 8132 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-03 00:51:09.229  INFO 8132 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2455 ms
+2020-04-03 00:51:09.274  INFO 8132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-04-03 00:51:09.497  INFO 8132 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-04-03 00:51:09.503  INFO 8132 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/community'
+2020-04-03 00:51:09.842  INFO 8132 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-03 00:51:09.909  INFO 8132 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.10.Final}
+2020-04-03 00:51:10.093  INFO 8132 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-03 00:51:10.193  INFO 8132 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-04-03 00:51:10.541  INFO 8132 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-03 00:51:10.546  INFO 8132 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-03 00:51:10.597  INFO 8132 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-03 00:51:11.267  WARN 8132 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-03 00:51:11.439  INFO 8132 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-03 00:51:11.551  INFO 8132 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-03 00:51:12.169  INFO 8132 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2020-04-03 00:51:12.173  INFO 8132 --- [restartedMain] com.demo.community.CommunityApplication  : Started CommunityApplication in 6.943 seconds (JVM running for 9.42)
+2020-04-03 00:51:23.643  INFO 8132 --- [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-03 00:51:23.647  INFO 8132 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-04-03 00:51:23.671  INFO 8132 --- [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 20 ms
+2020-04-03 00:51:23.796 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:23.829 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:23.852 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:23.865 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:23.867 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:23.882 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:23.994 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.QuestionMapper.countByExample    : ==>  Preparing: select count(*) from QUESTION 
+2020-04-03 00:51:23.995 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.QuestionMapper.countByExample    : ==> Parameters: 
+2020-04-03 00:51:23.995 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.QuestionMapper.countByExample    : <==      Total: 1
+2020-04-03 00:51:23.997 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.Q.selectByExampleWithRowbounds   : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR_ID, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG from QUESTION order by gmt_create desc 
+2020-04-03 00:51:23.998 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.Q.selectByExampleWithRowbounds   : ==> Parameters: 
+2020-04-03 00:51:24.002 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:24.003 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:24.004 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:24.025 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:24.026 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:24.028 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:24.030 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:24.031 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:24.035 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:24.037 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:24.037 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:24.038 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:24.039 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:24.039 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:24.042 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:24.565 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:24.562 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:24.570 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:24.570 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:24.562 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:24.571 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:24.572 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:24.573 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:24.581 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:24.582 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:24.584 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:24.585 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:24.590 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:24.584 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:24.594 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:24.595 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:24.597 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:24.590 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:24.603 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:24.596 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:24.596 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:24.612 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:24.613 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:24.598 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:24.616 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:24.618 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:24.620 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:24.616 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:24.626 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:24.632 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:32.330 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:32.332 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:32.333 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:32.339 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:32.343 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:32.345 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:32.364 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.QuestionMapper.countByExample    : ==>  Preparing: select count(*) from QUESTION 
+2020-04-03 00:51:32.364 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.QuestionMapper.countByExample    : ==> Parameters: 
+2020-04-03 00:51:32.365 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.QuestionMapper.countByExample    : <==      Total: 1
+2020-04-03 00:51:32.371 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.Q.selectByExampleWithRowbounds   : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR_ID, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG from QUESTION order by gmt_create desc 
+2020-04-03 00:51:32.373 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.Q.selectByExampleWithRowbounds   : ==> Parameters: 
+2020-04-03 00:51:32.387 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:32.390 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:32.393 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:32.397 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:32.397 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:32.400 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:32.402 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:32.403 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:32.404 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:32.405 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:32.405 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:32.409 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:32.410 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:32.410 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:32.411 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:32.567 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:32.568 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:32.569 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:32.581 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:32.585 DEBUG 8132 --- [http-nio-8888-exec-9] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:32.587 DEBUG 8132 --- [http-nio-8888-exec-9] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:32.588 DEBUG 8132 --- [http-nio-8888-exec-9] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:32.590 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:32.592 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:32.599 DEBUG 8132 --- [http-nio-8888-exec-10] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:32.602 DEBUG 8132 --- [http-nio-8888-exec-10] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:32.602 DEBUG 8132 --- [http-nio-8888-exec-10] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:32.603 DEBUG 8132 --- [http-nio-8888-exec-10] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:32.594 DEBUG 8132 --- [http-nio-8888-exec-9] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:32.614 DEBUG 8132 --- [http-nio-8888-exec-9] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:32.615 DEBUG 8132 --- [http-nio-8888-exec-9] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:32.613 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:32.618 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:32.619 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:32.609 DEBUG 8132 --- [http-nio-8888-exec-10] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:32.620 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:32.625 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:32.629 DEBUG 8132 --- [http-nio-8888-exec-1] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:32.623 DEBUG 8132 --- [http-nio-8888-exec-10] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:32.628 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:32.636 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:32.637 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:32.640 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:32.640 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:32.641 DEBUG 8132 --- [http-nio-8888-exec-3] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:42.385 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:42.386 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:42.389 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:42.391 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:42.396 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:42.400 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:42.401 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.QuestionMapper.countByExample    : ==>  Preparing: select count(*) from QUESTION 
+2020-04-03 00:51:42.406 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.QuestionMapper.countByExample    : ==> Parameters: 
+2020-04-03 00:51:42.409 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.QuestionMapper.countByExample    : <==      Total: 1
+2020-04-03 00:51:42.411 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.Q.selectByExampleWithRowbounds   : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR_ID, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG from QUESTION order by gmt_create desc 
+2020-04-03 00:51:42.412 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.Q.selectByExampleWithRowbounds   : ==> Parameters: 
+2020-04-03 00:51:42.416 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:42.416 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:42.417 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:42.418 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:42.418 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:42.418 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:42.419 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:42.435 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:42.436 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:42.437 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:42.437 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:42.441 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:42.442 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER where ID = ? 
+2020-04-03 00:51:42.442 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2020-04-03 00:51:42.442 DEBUG 8132 --- [http-nio-8888-exec-2] c.d.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2020-04-03 00:51:42.577 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:42.578 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:42.583 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:42.585 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:42.592 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:42.593 DEBUG 8132 --- [http-nio-8888-exec-4] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:42.604 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:42.605 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:42.606 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:42.619 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:42.620 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:42.621 DEBUG 8132 --- [http-nio-8888-exec-5] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:42.625 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:42.631 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:42.633 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:42.642 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:42.646 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:42.647 DEBUG 8132 --- [http-nio-8888-exec-6] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:42.660 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:42.662 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:42.663 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:42.664 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:42.667 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:42.668 DEBUG 8132 --- [http-nio-8888-exec-7] c.d.c.m.N.countByExample                 : <==      Total: 1
+2020-04-03 00:51:42.677 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, AVATAR_URL, BIO from USER WHERE ( TOKEN = ? ) 
+2020-04-03 00:51:42.678 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.mapper.UserMapper.selectByExample  : ==> Parameters: 0482835f-3e47-417e-9573-7dbf3c979edf(String)
+2020-04-03 00:51:42.678 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.mapper.UserMapper.selectByExample  : <==      Total: 1
+2020-04-03 00:51:42.680 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER_ID = ? and STATUS = ? ) 
+2020-04-03 00:51:42.683 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.m.N.countByExample                 : ==> Parameters: 1(Long), 0(Integer)
+2020-04-03 00:51:42.687 DEBUG 8132 --- [http-nio-8888-exec-8] c.d.c.m.N.countByExample                 : <==      Total: 1

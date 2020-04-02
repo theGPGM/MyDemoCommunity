@@ -1,28 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.community.mapper.QuestionExtMapper">
-  <resultMap id="BaseResultMap" type="com.demo.community.model.Question">
-    <id column="ID" jdbcType="INTEGER" property="id"/>
-    <result column="TITLE" jdbcType="VARCHAR" property="title"/>
-    <result column="GMT_CREATE" jdbcType="BIGINT" property="gmtCreate"/>
-    <result column="GMT_MODIFIED" jdbcType="BIGINT" property="gmtModified"/>
-    <result column="CREATOR_ID" jdbcType="INTEGER" property="creatorId"/>
-    <result column="COMMENT_COUNT" jdbcType="INTEGER" property="commentCount"/>
-    <result column="VIEW_COUNT" jdbcType="INTEGER" property="viewCount"/>
-    <result column="LIKE_COUNT" jdbcType="INTEGER" property="likeCount"/>
-    <result column="TAG" jdbcType="VARCHAR" property="tag"/>
-  </resultMap>
-  <update id="incView" parameterType="com.demo.community.model.Question">
+    <resultMap id="BaseResultMap" type="com.demo.community.model.Question">
+        <id column="ID" jdbcType="INTEGER" property="id"/>
+        <result column="TITLE" jdbcType="VARCHAR" property="title"/>
+        <result column="GMT_CREATE" jdbcType="BIGINT" property="gmtCreate"/>
+        <result column="GMT_MODIFIED" jdbcType="BIGINT" property="gmtModified"/>
+        <result column="CREATOR_ID" jdbcType="INTEGER" property="creatorId"/>
+        <result column="COMMENT_COUNT" jdbcType="INTEGER" property="commentCount"/>
+        <result column="VIEW_COUNT" jdbcType="INTEGER" property="viewCount"/>
+        <result column="LIKE_COUNT" jdbcType="INTEGER" property="likeCount"/>
+        <result column="TAG" jdbcType="VARCHAR" property="tag"/>
+    </resultMap>
+    <update id="incView" parameterType="com.demo.community.model.Question">
     update QUESTION
     set VIEW_COUNT = VIEW_COUNT + #{viewCount,jdbcType=INTEGER}
     where id = #{id}
   </update>
-  <update id="incCommentCount" parameterType="com.demo.community.model.Question">
+    <update id="incCommentCount" parameterType="com.demo.community.model.Question">
     update QUESTION
     set COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER}
     where id = #{id}
   </update>
-  <select id="selectRelatedTopic" parameterType="com.demo.community.model.Question" resultMap="BaseResultMap">
+    <select id="selectRelatedTopic" parameterType="com.demo.community.model.Question" resultMap="BaseResultMap">
     select * from QUESTION where id != #{id} and tag regexp #{tag}
   </select>
+    <select id="countBySearch" parameterType="com.demo.community.dto.QuestionQueryDTO" resultType="java.lang.Long">
+        select count(*) from QUESTION
+        <where>
+            <if test="search != null">
+                and title regexp #{search}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectBySearchWithRowbounds" parameterType="com.demo.community.dto.QuestionQueryDTO" resultMap="BaseResultMap">
+        select * from QUESTION
+        <where>
+            <if test="search != null">
+                and title regexp #{search}
+            </if>
+        </where>
+        order by gmt_modified desc limit #{page}, #{size}
+    </select>
 </mapper>

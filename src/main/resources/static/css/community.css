@@ -171,3 +171,22 @@ a:hover{
 .profile-badge{
     background-color: #bd2d2d
 }
+
+.login-page{
+    margin: 100px 400px 50px;
+    background-color: white;
+}
+
+.login-main{
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.footer{
+    color: #666;
+    text-align: center;
+    padding: 0px 0 10px;
+    font-size: 12px;
+}

@@ -194,10 +194,10 @@ function like(e) {
             }),
             success: function (response) {
                 if (response.code == 200) {
-
-
                 } else {
                     alert(response.message);
+                    e.classList.remove("active");
+                    e.removeAttribute("like-active");;
                 }
             },
             dataType: "json",
@@ -217,6 +217,8 @@ function like(e) {
 
                 } else {
                     alert(response.message);
+                    e.classList.remove("active");
+                    e.removeAttribute("like-active");
                 }
             },
             dataType: "json",

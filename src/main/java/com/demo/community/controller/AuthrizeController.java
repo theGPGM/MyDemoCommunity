@@ -21,7 +21,7 @@ import java.util.UUID;
 @Controller
 public class AuthrizeController {
 
-    private static final Integer COOKIE_TIME = 7 * 24 * 60 * 60;
+    private static final Integer LOGIN_COOKIE_TIME = 7 * 24 * 60 * 60;
 
     @Autowired
     private UserMapper userMapper;
@@ -64,7 +64,7 @@ public class AuthrizeController {
             user.setAvatarUrl(githubUser.getAvatar_url());
             userService.createOrUpdate(user);
             Cookie user_session = new Cookie("user_session", token);
-            user_session.setMaxAge(COOKIE_TIME);
+            user_session.setMaxAge(LOGIN_COOKIE_TIME);
             response.addCookie(user_session);
             UserExample userExample = new UserExample();
             userExample.createCriteria()
@@ -76,7 +76,7 @@ public class AuthrizeController {
             return "redirect:/";
         }else{
             //登录失败，重新登录
-            return "redirect:/";
+            return "redirect:/login";
         }
     }
 }

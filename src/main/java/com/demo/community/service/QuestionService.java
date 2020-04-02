@@ -2,6 +2,7 @@ package com.demo.community.service;
 
 import com.demo.community.dto.PaginationDTO;
 import com.demo.community.dto.QuestionDTO;
+import com.demo.community.dto.QuestionQueryDTO;
 import com.demo.community.exception.CustomizeErrorCode;
 import com.demo.community.exception.CustomizeException;
 import com.demo.community.mapper.QuestionExtMapper;
@@ -32,21 +33,43 @@ public class QuestionService {
     @Autowired
     private QuestionMapper questionMapper;
 
+    //首页列表
+    public PaginationDTO getIndexList(Integer page, Integer size){
+        return list("", page, size);
+    }
 
-    //返回文章列表
-    public PaginationDTO list(String searchContent, Integer page, Integer size) {
+    //搜索列表
+    public PaginationDTO getSearchList(String searchContent, Integer page, Integer size){
+        return list(searchContent, page, size);
+    }
+
+    //返回列表
+    private PaginationDTO list(String searchContent, Integer page, Integer size) {
 
         PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO<>();
-
         Integer count = (int) questionMapper.countByExample(new QuestionExample());
-        Integer totalPage = countTotalPage(count, page, size);
-        if (totalPage == 0) {
-            return null;
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        if(StringUtils.isNotBlank(searchContent)){
+            String search = StringUtils.replace(searchContent, " ", "|");
+            questionQueryDTO.setSearch(search);
+            count = (int) questionExtMapper.countBySearch(questionQueryDTO);
         }
+
+        Integer totalPage = countTotalPage(count, page, size);
+        if (totalPage == 0) return null;
+
         Integer offset = size * (page - 1);
+
+        questionQueryDTO.setPage(offset);
+        questionQueryDTO.setSize(size);
+
         QuestionExample example = new QuestionExample();
         example.setOrderByClause("gmt_create desc");
         List<Question> list = questionMapper.selectByExampleWithRowbounds(example, new RowBounds(offset, size));
+
+        if(StringUtils.isNotBlank(searchContent))
+            list = questionExtMapper.selectBySearchWithRowbounds(questionQueryDTO);
+
         List<QuestionDTO> questionDTOS = new ArrayList<>();
         paginationDTO.setPagination(totalPage, page, size);
 
@@ -64,9 +87,7 @@ public class QuestionService {
 
     //个人问题列表
     public PaginationDTO<QuestionDTO> list(Long userId, Integer page, Integer size) {
-
         PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO<>();
-
         QuestionExample example = new QuestionExample();
         example.createCriteria()
                 .andCreatorIdEqualTo(userId);
@@ -91,7 +112,6 @@ public class QuestionService {
             questionDTOS.add(questionDTO);
         }
         paginationDTO.setObjects(questionDTOS);
-
         return paginationDTO;
     }
 
@@ -114,22 +134,11 @@ public class QuestionService {
 
         if (question.getId() == null) {
             //创建问题
-            question.setGmtCreate(System.currentTimeMillis());
-            question.setGmtModified(question.getGmtCreate());
-            question.setCommentCount(0);
-            question.setLikeCount(0);
-            question.setViewCount(0);
+            createQuestion(question);
             questionMapper.insert(question);
         } else {
             //更新问题
-            Question updateQuestion = new Question();
-            updateQuestion.setGmtModified(System.currentTimeMillis());
-            updateQuestion.setTitle(question.getTitle());
-            updateQuestion.setDescription(question.getDescription());
-            updateQuestion.setTag(question.getTag());
-            updateQuestion.setCommentCount(question.getCommentCount());
-            updateQuestion.setLikeCount(question.getLikeCount());
-            updateQuestion.setViewCount(question.getViewCount());
+            Question updateQuestion = createUpdateQuestion(question);
             QuestionExample questionExample = new QuestionExample();
             questionExample.createCriteria()
                     .andIdEqualTo(question.getId());
@@ -137,6 +146,26 @@ public class QuestionService {
             if (updated != 1)
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
         }
+    }
+
+    private Question createUpdateQuestion(Question question) {
+        Question updateQuestion = new Question();
+        updateQuestion.setGmtModified(System.currentTimeMillis());
+        updateQuestion.setTitle(question.getTitle());
+        updateQuestion.setDescription(question.getDescription());
+        updateQuestion.setTag(question.getTag());
+        updateQuestion.setCommentCount(question.getCommentCount());
+        updateQuestion.setLikeCount(question.getLikeCount());
+        updateQuestion.setViewCount(question.getViewCount());
+        return updateQuestion;
+    }
+
+    private void createQuestion(Question question) {
+        question.setGmtCreate(System.currentTimeMillis());
+        question.setGmtModified(question.getGmtCreate());
+        question.setCommentCount(0);
+        question.setLikeCount(0);
+        question.setViewCount(0);
     }
 
     //增加阅读数

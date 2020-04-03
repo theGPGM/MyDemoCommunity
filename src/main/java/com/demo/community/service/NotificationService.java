@@ -26,9 +26,6 @@ public class NotificationService {
     @Autowired
     private NotificationMapper notificationMapper;
 
-    @Autowired
-    private UserMapper userMapper;
-
     //创建通知
     public void createNotify(Comment comment, Long receivedId, String outerTitle, String notifierName, Integer type, Long outerId) {
 

@@ -15,7 +15,15 @@ public enum CustomizeErrorCode implements ICustomizeErrorCode {
     NOTIFICATION_NOT_FOUND(2011, "莫非消息不翼而飞了？"),
     LIKE_FAILED(2012, "点赞失败了，要不要再试一下?"),
     FILE_UPLOAD_FAILED(2013, "图片上传失败了"),
-    SEARCH_CONTENT_IS_EMPTY(2014, "搜索内容为空")
+    SEARCH_CONTENT_IS_EMPTY(2014, "搜索内容为空"),
+    USERNAME_IS_EMPTY(2015, "未输入用户名"),
+    PASSWORD_IS_EMPTY(2016, "未输入密码"),
+    REGISTER_FAILED(2017, "注册失败，要不再试一下？"),
+    USERNAME_IS_EXIST(2018, "用户名已存在，请输入别的用户名吧"),
+    LOGIN_FAILED(2019, "登录失败，要不再试一下？"),
+    USER_IS_NOT_EXIST(2020, "用户不存在"),
+    PASSWORD_IS_WRONG(2021, "密码不正确"),
+    LOGIN_USER_CANNOT_USE(2022, "已登录用户不能使用"),
     ;
 
     private Integer code;

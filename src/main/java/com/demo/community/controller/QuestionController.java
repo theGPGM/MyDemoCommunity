@@ -19,7 +19,7 @@ import java.util.List;
 @Controller
 public class QuestionController {
 
-    private static final Integer VIEW_COOKIE_TIME = 60;
+    private static final Integer VIEW_COOKIE_TIME = 10;
 
     @Autowired
     private QuestionService questionService;

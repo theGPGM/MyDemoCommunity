@@ -45,13 +45,13 @@ public class PublishController {
         User user = (User) request.getSession().getAttribute("user");
 
         //处理文本缺失
-        if (title == null || title == "") {
+        if (StringUtils.isBlank(title)) {
             throw new CustomizeException(CustomizeErrorCode.TITLE_IS_EMPTY);
         }
-        if (description == null || description == "") {
+        if (StringUtils.isBlank(description)) {
             throw new CustomizeException(CustomizeErrorCode.CONTENT_IS_EMPTY);
         }
-        if (tag == null || tag == "") {
+        if (StringUtils.isBlank(tag)) {
             throw new CustomizeException(CustomizeErrorCode.TAG_IS_EMPTY);
         }
 
@@ -78,23 +78,23 @@ public class PublishController {
     }
 
     @GetMapping("/publish/{id}")
-    public String edit(
-            @PathVariable(name = "id") Long id,
+    public String editOriginalPublish(
+            @PathVariable(name = "id") Long questionId,
             Model model,
             HttpServletRequest request
     ) {
         User user = (User) request.getSession().getAttribute("user");
-        QuestionDTO question = questionService.getById(id);
+        QuestionDTO questionDTO = questionService.getById(questionId);
 
-        if (question == null)
+        if (questionDTO == null)
             return "redirect:/";
 
         if (user != null) {
-            if (question.getCreatorId().equals(user.getId())) {
-                model.addAttribute("title", question.getTitle());
-                model.addAttribute("description", question.getDescription());
-                model.addAttribute("tag", question.getTag());
-                model.addAttribute("id", question.getId());
+            if (questionDTO.getCreatorId().equals(user.getId())) {
+                model.addAttribute("title", questionDTO.getTitle());
+                model.addAttribute("description", questionDTO.getDescription());
+                model.addAttribute("tag", questionDTO.getTag());
+                model.addAttribute("id", questionDTO.getId());
                 model.addAttribute("tags", TagCache.get());
                 return "publish";
             } else

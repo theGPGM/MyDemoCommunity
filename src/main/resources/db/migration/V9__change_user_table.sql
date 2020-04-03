@@ -1,0 +1,1 @@
+alter table USER drop column account_id;

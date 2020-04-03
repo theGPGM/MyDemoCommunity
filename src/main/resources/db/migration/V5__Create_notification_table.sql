@@ -1,4 +1,4 @@
-create table notification (
+create table NOTIFICATION (
     id bigint primary key auto_increment,
     notifier_id bigint not null,
     receiver_id bigint not null,

@@ -1,4 +1,4 @@
-create table question (
+create table QUESTION (
 
     id bigint auto_increment primary key not null,
     title varchar(50),

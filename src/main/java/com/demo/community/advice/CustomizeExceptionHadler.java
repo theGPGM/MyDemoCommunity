@@ -19,6 +19,7 @@ public class CustomizeExceptionHadler {
 
     @ExceptionHandler(Exception.class)
 
+    // JSON 类型的错误信息
     ModelAndView handle(HttpServletRequest request,
                   HttpServletResponse response,
                   Throwable ex,
